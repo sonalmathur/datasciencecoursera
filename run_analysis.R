@@ -65,4 +65,4 @@ names(data_mean_std) <- gsub("Mag", "Magnitude", names(data_mean_std))
 #5 creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 
 tidydata_average_sub<- ddply(data_mean_std, c("subId","activityType"), numcolwise(mean))
-write.table(tidydata_average_sub,file="tidydata.txt")
+write.table(tidydata_average_sub,file="tidydata.txt",row.names = FALSE)
